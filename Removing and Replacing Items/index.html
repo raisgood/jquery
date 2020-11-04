@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <h2>replace</h2>
+    <div><button type="button" class="btn" id="executor">Execute!!</button></div>
+
+    <div id="target">First line</div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <!-- remove script tag or event handler in JS! -->
+    <script>
+        $(function() {
+            //will execute when the page is ready
+            $('#executor').click(function() {
+                //replace with
+                //$('#target').replaceWith('<div class="red">New content</div>');
+                //})
+
+                //replace with (id version)
+                //$('#target').replaceWith('<div id="target" class="red">New content</div>');
+                //})
+
+                //replace all
+                //$('<div class="red">New content</div>').replaceAll('#target');
+                //})
+
+                //replace all (id version)
+                $('<div id="target" class="red">New content</div>').replaceAll('#target');
+            })
+
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

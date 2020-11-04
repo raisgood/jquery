@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="container">
+        <div>First</div>
+        <div>Second</div>
+        <div>Third</div>
+        <div id="target">Fourth (Target)</div>
+        <div>Fifth</div>
+        <div>Sixth</div>
+        <div>Seventh</div>
+    </div>
+
+    <div id="display"></div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <script>
+        $(function() {
+            //will execute when the page is ready
+
+            var element = $('#target');
+            var container = $('#container');
+
+            var index = container.children().index(element);
+
+            $('#display').text('Index is' + index);
+
+            // get returns a DOM element, **NOT** a jQuery object
+            var foundElement = container.children().get(index);
+            // convert to jQuery object
+            var jQueryObject = $(foundElement);
+            jQueryObject.attr('style', 'color:red');
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- your page -->
+    <div id="target" class="blue">Demo Element</div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <!-- remove script tag or event handler in JS! -->
+    <script>
+        $(function() {
+            //will execute when the page is ready
+
+            //update attribute value
+            $('#target').attr('style', 'color:red');
+
+            // read attribute value
+            //var style = $('#target').attr('style');
+            //alert(style);
+
+            //remove attribute value
+            $('#target').removeAttr('style');
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

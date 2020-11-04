@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div>
+        <button type="button" class="btn" id="execute">Save data</button>
+    </div>
+
+    <div id="output">Data will go here</div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <script>
+        $(function() {
+        $('execute').click(function() {
+            //with .done method
+            //$.getScript('/js/script.js').done(function()
+            //usual java script method
+            $.getScript('/js/script.js');
+        });
+        });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

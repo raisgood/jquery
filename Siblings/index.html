@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="stop">First</div>
+    <div>Second</div>
+    <div>Third</div>
+    <div id="target">Fourth (Target)</div>
+    <div>Fifth</div>
+    <div>Sixth</div>
+    <div class="stop">Seventh</div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <script>
+        $(function() {
+            //will execute when the page is ready
+
+            //update previous element
+            //$('#target').prev().attr('style', 'color:red');
+
+            //update all previous elements
+            //$('#target').prevAll().attr('style', 'color:red');
+
+            //update all previous until (but not including) stop 
+            //$('#target').prevUntil('.stop').attr('style', 'color:red');
+
+            //update the next element
+            //$('#target').next().attr('style', 'color:red');
+
+            //update all the next elements
+            //$('#target').nextAll().attr('style', 'color:red');
+
+            //update all the next elements until (but not including) stop
+            $('#target').nextUntil('.stop').attr('style', 'color:red');
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

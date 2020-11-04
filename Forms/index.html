@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" />
+            <span class="help" hidden="hidden">Please enter a name</span>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" />
+            <span class="help" hidden="hidden">Please enter a name</span>
+        </div>
+    </form>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+    <script>
+        $(function() {
+            //will execute when the page is ready
+
+            $('input[type="text"]').focus(function() {
+                    //convert this to a jQueryObject
+                    //find the next span element
+                    //remove the hidden attribute
+                    $(this).next('span.help').removeAttr('hidden');
+                })
+                .blur(function() {
+                    // find every help span element and hide them
+                    $('span.help').attr('hidden', 'hidden');
+                })
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

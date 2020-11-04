@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div>
+        <input type="type" id="message" class="form-control" />
+        <button type="button" class="btn" id="send-message" disabled="disabled">Send Message</button>
+    </div>
+    <ul id="message">
+
+    </ul>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <script>
+        // Load the worker
+        var worker = new Worker('/.js/script.js');
+
+        // Register the message event handler
+        worker.addEventListener('message', function(e) {
+            //simple messageing - if the worker is ready it'll send a message worker
+            if (e.data === "READY") {
+                // print the worker is ready
+                $('#message').append('<li>Worker ready</li>');
+
+                // enable the button and add a click event handler
+                $('#send-message').removeAttr('disabled').click(function() {
+                    //send the contents of the textbox to the worker
+                    var message = $('#message').val();
+                    worker.postMessage(message);
+                });
+
+                //place the focus on the textbox
+                $('#message').focus();
+            } else {
+                // if the message wasn't READY, it's just a normal message
+
+                // Add the message to the output
+                $('#message').append('<li>' + e.data + '</li>');
+
+                // Clear the textbox and reset focus 
+                $('#message').val('').focus;
+            }
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

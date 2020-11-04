@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div><button type="button" class="btn" id="target">Execute!</button></div>
+
+    <div id="display" class="red">
+        <div>This content was already here</div>
+    </div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <script>
+        $(function() {
+            //will execute when the page is ready
+
+            $('#target').click(function() {
+                //makes modifications on the outside
+
+                //before
+                $('#display').before('<div>This is at the beginning</div>');
+
+                //after
+                $('#display').after('<div>This is at the end</div>');
+            })
+
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

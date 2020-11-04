@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            font-size: 32px;
+        }
+        
+        div {
+            margin-top: .1em;
+        }
+        
+        .parent {
+            margin-left: 8em;
+        }
+        
+        .child {
+            margin-left: 1.6em;
+        }
+    </style>
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- your page -->
+    <div id="target" style="color:black">
+        Grandparent
+        <div style="color:black" class="parent">
+            -Parent
+            <div style="color:black" class="child">-First child</div>
+            <div style="color:black" class="child" id="demo">-Second child</div>
+        </div>
+    </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <script>
+        $(function() {
+            //will execute when the page is ready
+
+            //will locate and direct children
+
+            //first locator will give me an element with the id of target
+            //second locator (method) will get me all direct children
+            //the attr method will update an attribute
+            //$('#target').attr('style', 'color:red');
+
+            //first locator will give me an element with the id of target
+            //second locator (method) will get me all direct children
+            //the attr method will update an attribute
+            //$('#target').children().attr('style', 'color:red');
+
+            //first locator will give me an element with the id of target
+            //second locator (method) will get me all direct children
+            //the attr method will update an attribute
+            //$('#target').find('.demo').attr('style', 'color:red');
+
+            //first locator will give me an element with the id of target
+            //second locator (method) will get me all direct children
+            //the attr method will update an attribute
+            //$('#target').find().attr('style', 'color:red');
+
+
+            //first locator will give me an element with the id of target
+            //second locator (method) will get me all direct children
+            //the attr method will update an attribute
+            //find always wants a selector
+            //$('#target').find('*').attr('style', 'color:red');
+
+
+            //first locator will give me an element with the id of target
+            //second locator (method) will get me all descendants
+            //the attr method will update an attribute
+
+            // first method will give us the element with the id of demo
+            // second method will give us the parent(and only the direct parent and the attr method will update an attribute)
+            //$('#demo').parent().attr('style', 'color:red');
+
+            // second method will give us the parents(and only the direct parents and the attr method will update an attribute)
+            $('#demo').parents().attr('style', 'color:red');
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

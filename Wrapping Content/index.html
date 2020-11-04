@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <h3>wrapping</h3>
+    <div><button type="button" class="btn" id="target">Execute!</button></div>
+
+    <div class="wrap-me">First line</div>
+    <div class="wrap-me">Second line</div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <script>
+        $(function() {
+            //will execute when the page is ready
+
+            $('#target').click(function() {
+                //$('.wrap-me').wrap('<div class="red"></div>');
+
+                //$('.wrap-me').wrapAll('<div class="red"></div>');
+
+                $('.wrap-me').wrapInner('<div class="red"></div>');
+            })
+
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

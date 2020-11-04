@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- your page -->
+    <div id="target">Demo Element</div>
+
+    <div id="display">Another demo</div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <!-- remove script tag or event handler in JS! -->
+    <script>
+        $(function() {
+            //will execute when the page is ready
+
+            //event handler syntax
+            //$('#target').click(function() {
+            //this is the click event handler for the div element
+            //$('#display').text('Div was clicked');
+            //});
+
+            //another click function handler
+            $('div').click(function() {
+                alert('div was clicked');
+            });
+
+            $('div').click(function() {
+                //this is the **DOM element** of the item that raised the event
+                //convert to a jQuery object
+                $(this).text('Clicked!');
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div><button type="button" class="btn" id="target">Execute!</button></div>
+
+    <div id="display" class="red">
+        <div>This content was already here</div>
+    </div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <!-- remove script tag or event handler in JS! -->
+    <script>
+        $(function() {
+            //will execute when the page is ready
+            $('#target').click(function() {
+                //prepend
+                $('#display').prepend('<div>This is at the beginning</div>');
+
+                //append
+                $('#display').append('<div>This is at the end</div>');
+            })
+
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

@@ -1,0 +1,21 @@
+body {
+    font-size: 32px;
+}
+
+div {
+    margin-top: .1em;
+}
+
+
+/*.box {
+    height: 5em;
+    width: 5em;
+    background-color: darkblue;
+    color: white;
+    display: none;
+}
+*/
+
+.btn {
+    font-size: 1em;
+}

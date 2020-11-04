@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- your page -->
+    <form>
+        <div><button type="button" class="btn validate">First button</button></div>
+        <div><button type="button" class="btn validate">Second button</button></div>
+        <div><button type="button" class="btn">Third button</button></div>
+    </form>
+
+    <div id="display"></div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <!-- remove script tag or event handler in JS! -->
+    <script>
+        $(function() {
+            //will execute when the page is ready
+
+            $('form').on('click', 'button.validate', function() {
+                $('#display').text('Clicked!!');
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

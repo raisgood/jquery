@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div>
+        <button type="button" class="btn" id="send-worker">Start worker</button>
+    </div>
+    <ul id="message"></ul>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <script>
+        $(function() {
+            $('#start-worker').click(function() {
+                // get promise
+                var promise = beginProcessing();
+
+                // register our event handlers
+                promise.progress(function(message) {
+                    // Update the UI for progress
+                    $('#messages').append('<li>Progress: ' + message + '</li>');
+                }).done(function(message) {
+                    // Update the UI for completion
+                    $('#messages').append('<li>Completion: ' + message + '</li>');
+                });
+            });
+        })
+
+        function beginProcessing() {
+            // Create deferred object & make sure it's going to be in scope
+            var deferred = new $.Deferred();
+
+            // Create our worker (just like before)
+            var worker = new Worker('worker_deferred.js');
+
+            // Register the message event handler
+            worker.addEventListener('message', function(e) {
+                // simple messaging - if the worker is ready it'll send a message with READY as the text
+                if (e.data === 'READY') {
+                    // No UI code
+                    // Progress notification
+                    deferred.notify('Worker started');
+
+                } else if (e.data === 'COMPLETED') {
+                    // processing is done
+                    // No UI code
+                    // Completed notification
+                    deferred.resolve('Worker completed');
+
+                    worker.terminate();
+                }
+            });
+
+            return deferred.promise();
+        }
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

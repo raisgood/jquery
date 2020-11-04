@@ -1,0 +1,16 @@
+body {
+    font-size: 32px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div {
+    margin-top: .3em;
+}
+
+.btn {
+    font-size: 1em;
+}
+
+.form-control {
+    font-size: 1em;
+}

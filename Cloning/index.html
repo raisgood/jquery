@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <h2>clone</h2>
+    <div><button type="button" class="btn" id="executor">Execute!!</button></div>
+
+    <div id="dialog">First line</div>
+
+    <div id="container">
+
+    </div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <script>
+        $(function() {
+            //find the dialog element, clone it, and put it into a variable
+            var $dialog = $('#dialog').clone();
+            $dialog.removeAttr('id');
+
+            $('#executor').click(function() {
+                // each time we want a new instance we need to clone it again
+                $('#container').append($dialog.clone());
+            })
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

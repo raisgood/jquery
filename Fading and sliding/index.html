@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <h2>fading</h2>
+    <div><button type="button" class="btn" id="executor">Execute!!</button></div>
+
+    <div id="box">Demo content</div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <!-- remove script tag or event handler in JS! -->
+    <script>
+        $(function() {
+            //will execute when the page is ready
+            $('#executor').click(function() {
+                //fade out
+                //$('#box').fadeOut(1000);
+
+                //fade in
+                //$('#box').fadeIn(1000);
+
+                //fade toggle
+                //$('#box').fadeToggle(1000);
+
+                //fade to
+                //$('#box').fadeTo(duration, opacity);
+
+                //slide down
+                //$('#box').slideDown(1000);
+
+                //slide up
+                //$('#box').slideUp(1000);
+
+                //slide toggle
+                //$('#box').slideToggle(1000);
+            })
+
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>

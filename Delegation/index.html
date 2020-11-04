@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Demo page</title>
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <form>
+        <div><button type="button" class="btn" id="creator">Create New Button</button></div>
+        <div><button type="button" class="btn updater">Existing Button</button></div>
+        <div id="target"></div>
+    </form>
+
+    <div id="display"></div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+    <!-- remove script tag or event handler in JS! -->
+    <script>
+        $(function() {
+            //will execute when the page is ready
+
+
+            $('#creator').click(function() {
+                $('#target').html('<button type="button" class="btn updater">New Button</button>');
+            });
+
+            //click method
+            //$('button.updater').click(function() {
+            //$('#display').text($(this).text() + ' was clicked!');
+            //})
+
+            //delegate method (will add the event handler to all future objects as well)
+            //inside the form, with a type of button and class of updater 
+            //for click event
+            $('form').delegate('button.updater', 'click', function() {
+                $('#display').text($(this).text() + ' was clicked!');
+            })
+
+
+
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</head>
